@@ -1,0 +1,6 @@
+
+	{{#each columnDefinitions key="@index" as |column|}}
+	  {{#if column.visible}}
+	    {{data-table-cell-standard columnDefinition=column record=record}}
+	  {{/if}}
+	{{/each}}

@@ -1,0 +1,16 @@
+{{#if isPager}}
+	<li class="previous {{if navigatePrevious 'enabled' 'disabled'}}"><a {{action "previousPage" bubbles=false}}>{{previousText}}</a></li>
+	<li class="next {{if navigateNext 'enabled' 'disabled'}}"><a {{action "nextPage" bubbles=false}}>{{nextText}}</a></li>
+{{else}}
+	{{#if showFirstLast}}
+	<li class="first"><a {{action "first" bubbles=false}}>{{firstText}}</a></li>
+	{{/if}}
+	<li class="previous {{if navigatePrevious 'enabled' 'disabled'}}"><a {{action "previousPage" bubbles=false}}>{{previousText}}</a></li>
+	{{#each visiblePages key="@index" as |page|}}
+		<li class="{{if (eq number page) 'active'}}"><a {{action "gotoPage" page bubbles=false}}>{{page}}</a></li>
+	{{/each}}
+	<li class="next {{if navigateNext 'enabled' 'disabled'}}"><a {{action "nextPage" bubbles=false}}>{{nextText}}</a></li>
+	{{#if showFirstLast}}
+	<li class="last"><a {{action "last" bubbles=false}}>{{lastText}}</a></li>
+	{{/if}}
+{{/if}}

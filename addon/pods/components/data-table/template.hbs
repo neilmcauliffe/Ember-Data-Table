@@ -1,0 +1,20 @@
+	<thead>
+	<tr>
+	{{#each columnDefinitions key="@index" as |column|}}
+	  {{#if column.visible}}
+	    <td>
+	      {{column.title}}              
+	    </td>
+	  {{/if}}
+	{{/each}}
+	</tr>
+	</thead>
+	{{#if recordsAvailable}}
+		{{#each displayRecords key="@index" as |record|}}
+			{{data-table-row columnDefinitions=columnDefinitions record=record}}
+		{{/each}}
+	{{else}}
+		<tr>
+			<td colspan="{{columnCount}}">No matching records found</td>
+		</tr>
+	{{/if}}
