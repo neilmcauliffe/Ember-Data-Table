@@ -1,5 +1,5 @@
 module.exports = {
-  description: 'ember-data-table'
+  description: 'ember-data-table',
 
   // locals: function(options) {
   //   // Return custom template variables here.
