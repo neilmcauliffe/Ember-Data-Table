@@ -25,7 +25,7 @@ export default Ember.Component.extend({
             return this.get('records.length');
         }
 
-        return this.get('records.meta').total;
+        return this.get('records.meta.count');
     }).volatile(),
 
     // The current page of the component
