@@ -1,0 +1,12 @@
+{{data-table configuration=configuration records=records number=number}}
+{{#if configuration.paginationEnabled}}
+	<div class="text-center">
+		{{data-table-pagination size=configuration.size 
+								total=total 
+								isPager=configuration.isPager 
+								showFirstLast=configuration.showFirstLast 
+								displayPages=configuration.displayPages
+								pageChanged='pageChanged'}}
+	</div>
+{{/if}}
+
