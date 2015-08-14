@@ -67,6 +67,11 @@ export default Ember.Component.extend({
     // The data set that will be displayed in the table
     //
     displayRecords: Ember.computed('records', 'number', function() {
+        if(Ember.isEmpty(this.get('records.meta')) && Ember.isArray(this.get('records')))
+        {
+            return this.get('records');
+        }
+
         return  this.get('records').slice(this.get('startIndex'), this.get('startIndex') + this.get('configuration.size'));
     }),
 

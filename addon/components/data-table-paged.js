@@ -38,6 +38,11 @@ export default Ember.Component.extend({
 
   	actions: {
         pageChanged: function(page) {
+            if(Ember.isEmpty(this.get('records.meta')) && Ember.isArray(this.get('records')))
+            {
+                this.sendAction('pageChanged', page);
+            }
+
             this.set('number', page);
         }
     }

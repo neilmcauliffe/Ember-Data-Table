@@ -144,11 +144,9 @@ export default Ember.Component.extend({
         gotoPage: function(page) {
             this.set('number', page);
             this.sendAction('pageChanged', page);
-            this._log('goToPage');
         }
     },
     didInsertElement: function() {
-         // this._log('didInsertElement');
     },
     _log: function(source){
         // Log to console for debug:
